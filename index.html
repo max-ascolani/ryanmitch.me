@@ -4,16 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ryan Mitchell</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏔️</text></svg>">
+    <meta property="og:title" content="Ryan Mitchell — Software Engineer">
+    <meta property="og:description" content="Backend systems, data pipelines, and infrastructure. Currently at Bastion Security, previously Tensor Cloud and Pinpoint Analytics.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="headshot.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Nunito+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        heading: ['Outfit', 'system-ui', 'sans-serif'],
+                        body: ['Nunito Sans', 'system-ui', 'sans-serif'],
                         mono: ['JetBrains Mono', 'monospace'],
                     },
                     colors: {
@@ -31,19 +37,49 @@
         }
     </script>
     <style>
-        body { font-family: 'Inter', system-ui, sans-serif; }
+        body { font-family: 'Nunito Sans', system-ui, sans-serif; }
+        h1, h2, h3, h4, .font-heading { font-family: 'Outfit', system-ui, sans-serif; }
         .font-mono { font-family: 'JetBrains Mono', monospace; }
         ::selection { background: #386641; color: #fff; }
+        .mountain-bg {
+            position: relative;
+        }
+        .mountain-bg::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 120px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,120 L150,60 L300,90 L420,30 L540,75 L660,15 L780,60 L900,40 L1020,70 L1140,25 L1200,50 L1200,120 Z' fill='%23386641' opacity='0.04'/%3E%3Cpath d='M0,120 L200,80 L350,100 L500,50 L650,85 L800,35 L950,70 L1100,45 L1200,65 L1200,120 Z' fill='%23386641' opacity='0.03'/%3E%3C/svg%3E") no-repeat bottom center;
+            background-size: cover;
+            pointer-events: none;
+        }
+        .spark-bar {
+            display: inline-flex;
+            align-items: flex-end;
+            gap: 2px;
+            height: 16px;
+            vertical-align: middle;
+            margin-left: 6px;
+        }
+        .spark-bar span {
+            display: block;
+            width: 3px;
+            background: #386641;
+            border-radius: 1px;
+            opacity: 0.5;
+        }
     </style>
 </head>
 <body class="bg-sand text-gray-700 antialiased">
 
     <!-- Header -->
-    <header class="max-w-5xl mx-auto px-6 pt-12 sm:pt-20 pb-16 sm:pb-24">
+    <header class="max-w-5xl mx-auto px-6 pt-12 sm:pt-20 pb-16 sm:pb-24 mountain-bg">
         <div class="flex flex-col sm:flex-row items-start gap-6 sm:gap-10">
             <img src="headshot.png" alt="Ryan Mitchell" class="w-20 h-20 rounded-full object-cover border-2 border-green/10 flex-shrink-0">
             <div>
-                <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">Ryan Mitchell</h1>
+                <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight font-heading">Ryan Mitchell</h1>
                 <p class="mt-3 text-lg text-gray-500 leading-relaxed max-w-2xl">
                     Software engineer in San Francisco. I build backend systems, data pipelines, and occasionally
                     the dashboards that make sense of them. Currently at
@@ -53,15 +89,15 @@
                     Michigan grad. Mountain biker when the fog clears.
                 </p>
                 <div class="mt-5 flex flex-wrap gap-4 text-sm">
-                    <a href="https://github.com/rmitchell-dev" class="inline-flex items-center gap-1.5 text-gray-400 hover:text-green transition-colors">
+                    <a href="https://github.com/rmitchell-dev" class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gray-100 rounded-lg text-gray-600 hover:bg-green-bg hover:text-green transition-colors font-medium">
                         <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
                         GitHub
                     </a>
-                    <a href="https://linkedin.com/in/ryanmitchelldev" class="inline-flex items-center gap-1.5 text-gray-400 hover:text-green transition-colors">
+                    <a href="https://linkedin.com/in/ryanmitchelldev" class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gray-100 rounded-lg text-gray-600 hover:bg-green-bg hover:text-green transition-colors font-medium">
                         <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                         LinkedIn
                     </a>
-                    <a href="mailto:ryan@ryanmitchell.me" class="inline-flex items-center gap-1.5 text-gray-400 hover:text-green transition-colors">
+                    <a href="mailto:hello@ryanmitch.me" class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gray-100 rounded-lg text-gray-600 hover:bg-green-bg hover:text-green transition-colors font-medium">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
                         Email
                     </a>
@@ -75,7 +111,7 @@
         <!-- Projects -->
         <section>
             <div class="flex items-center gap-3 mb-10">
-                <h2 class="text-xs font-semibold uppercase tracking-widest text-green">Things I've Built</h2>
+                <h2 class="text-xs font-semibold uppercase tracking-widest text-green font-heading">Things I've Built</h2>
                 <div class="h-px flex-1 bg-gray-200"></div>
             </div>
 
@@ -86,7 +122,7 @@
                 <article id="bastion" class="grid grid-cols-1 lg:grid-cols-5 gap-8">
                     <div class="lg:col-span-3">
                         <div class="flex items-baseline gap-3 mb-1">
-                            <h3 class="text-xl font-semibold text-gray-900">Streaming Threat Detection</h3>
+                            <h3 class="text-xl font-semibold text-gray-900 font-heading">Streaming Threat Detection</h3>
                         </div>
                         <p class="text-sm text-green font-medium mb-4">Bastion Security, 2023</p>
                         <p class="text-gray-600 leading-relaxed mb-4">
@@ -110,7 +146,10 @@
                     <div class="lg:col-span-2 flex flex-col gap-3">
                         <div class="bg-white border border-gray-200 rounded-lg p-4">
                             <p class="font-mono text-xs text-gray-400 mb-1">Before / After</p>
-                            <p class="text-2xl font-semibold text-gray-900">45s <span class="text-gray-300 font-normal mx-1">&rarr;</span> <span class="text-green">&lt;3s</span></p>
+                            <div class="flex items-baseline gap-2">
+                                <p class="text-2xl font-semibold text-gray-900 font-heading">45s <span class="text-gray-300 font-normal mx-1">&rarr;</span> <span class="text-green">&lt;3s</span></p>
+                                <span class="spark-bar"><span style="height:4px"></span><span style="height:8px"></span><span style="height:14px"></span><span style="height:16px"></span><span style="height:16px"></span></span>
+                            </div>
                             <p class="text-xs text-gray-400 mt-1">Alert latency</p>
                         </div>
                         <div class="bg-white border border-gray-200 rounded-lg p-4">
@@ -127,7 +166,7 @@
                 <!-- Bastion: API Gateway -->
                 <article class="grid grid-cols-1 lg:grid-cols-5 gap-8">
                     <div class="lg:col-span-3">
-                        <h3 class="text-xl font-semibold text-gray-900 mb-1">Multi-Tenant API Gateway</h3>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-1 font-heading">Multi-Tenant API Gateway</h3>
                         <p class="text-sm text-green font-medium mb-4">Bastion Security, 2023</p>
                         <p class="text-gray-600 leading-relaxed mb-4">
                             The existing API layer was a single Flask app with tenant routing in middleware. A noisy
@@ -148,7 +187,10 @@
                     <div class="lg:col-span-2 flex flex-col gap-3">
                         <div class="bg-white border border-gray-200 rounded-lg p-4">
                             <p class="font-mono text-xs text-gray-400 mb-1">Throughput</p>
-                            <p class="text-2xl font-semibold text-gray-900">2,400 <span class="text-sm font-normal text-gray-400">req/sec</span></p>
+                            <div class="flex items-baseline gap-2">
+                                <p class="text-2xl font-semibold text-gray-900 font-heading">2,400 <span class="text-sm font-normal text-gray-400">req/sec</span></p>
+                                <span class="spark-bar"><span style="height:6px"></span><span style="height:10px"></span><span style="height:12px"></span><span style="height:16px"></span><span style="height:16px"></span></span>
+                            </div>
                             <p class="text-xs text-gray-400 mt-1">p99: 68ms (was 420ms)</p>
                         </div>
                         <div class="bg-white border border-gray-200 rounded-lg p-4">
@@ -165,7 +207,7 @@
                 <!-- Bastion: K8s Migration -->
                 <article class="grid grid-cols-1 lg:grid-cols-5 gap-8">
                     <div class="lg:col-span-3">
-                        <h3 class="text-xl font-semibold text-gray-900 mb-1">ECS to Kubernetes Migration</h3>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-1 font-heading">ECS to Kubernetes Migration</h3>
                         <p class="text-sm text-green font-medium mb-4">Bastion Security, 2024</p>
                         <p class="text-gray-600 leading-relaxed mb-4">
                             14 microservices on ECS with manually maintained task definitions. Deployments took 18
@@ -184,12 +226,15 @@
                             <div class="grid grid-cols-2 gap-4">
                                 <div>
                                     <p class="font-mono text-xs text-gray-400 mb-1">Deploy time</p>
-                                    <p class="text-lg font-semibold text-green">4 min</p>
+                                    <div class="flex items-baseline gap-1">
+                                        <p class="text-lg font-semibold text-green font-heading">4 min</p>
+                                        <span class="spark-bar"><span style="height:16px"></span><span style="height:10px"></span><span style="height:6px"></span><span style="height:4px"></span></span>
+                                    </div>
                                     <p class="text-xs text-gray-400">was 18 min</p>
                                 </div>
                                 <div>
                                     <p class="font-mono text-xs text-gray-400 mb-1">Cost savings</p>
-                                    <p class="text-lg font-semibold text-green">31%</p>
+                                    <p class="text-lg font-semibold text-green font-heading">31%</p>
                                     <p class="text-xs text-gray-400">$14K/month</p>
                                 </div>
                             </div>
@@ -208,7 +253,7 @@
                 <!-- Tensor: ML Serving -->
                 <article id="tensor" class="grid grid-cols-1 lg:grid-cols-5 gap-8">
                     <div class="lg:col-span-3">
-                        <h3 class="text-xl font-semibold text-gray-900 mb-1">ML Model Serving Layer</h3>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-1 font-heading">ML Model Serving Layer</h3>
                         <p class="text-sm text-green font-medium mb-4">Tensor Cloud, 2021-2022</p>
                         <p class="text-gray-600 leading-relaxed mb-4">
                             Tensor Cloud's inference layer was a prototype Flask service. At 400 req/sec, response times
@@ -228,7 +273,10 @@
                     <div class="lg:col-span-2 flex flex-col gap-3">
                         <div class="bg-white border border-gray-200 rounded-lg p-4">
                             <p class="font-mono text-xs text-gray-400 mb-1">GPU utilization</p>
-                            <p class="text-2xl font-semibold text-gray-900">35% <span class="text-gray-300 font-normal mx-1">&rarr;</span> <span class="text-green">78%</span></p>
+                            <div class="flex items-baseline gap-2">
+                                <p class="text-2xl font-semibold text-gray-900 font-heading">35% <span class="text-gray-300 font-normal mx-1">&rarr;</span> <span class="text-green">78%</span></p>
+                                <span class="spark-bar"><span style="height:5px"></span><span style="height:7px"></span><span style="height:12px"></span><span style="height:16px"></span></span>
+                            </div>
                             <p class="text-xs text-gray-400 mt-1">p99: 92ms at 1,800 req/sec</p>
                         </div>
                         <div class="bg-white border border-gray-200 rounded-lg p-4">
@@ -245,7 +293,7 @@
                 <!-- Tensor: Event-Driven Billing -->
                 <article class="grid grid-cols-1 lg:grid-cols-5 gap-8">
                     <div class="lg:col-span-3">
-                        <h3 class="text-xl font-semibold text-gray-900 mb-1">Event-Driven Billing Migration</h3>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-1 font-heading">Event-Driven Billing Migration</h3>
                         <p class="text-sm text-green font-medium mb-4">Tensor Cloud, 2022</p>
                         <p class="text-gray-600 leading-relaxed mb-4">
                             Billing lived inside a Django monolith. Race conditions between usage tracking and the
@@ -265,12 +313,12 @@
                             <div class="grid grid-cols-2 gap-4">
                                 <div>
                                     <p class="font-mono text-xs text-gray-400 mb-1">Billing errors</p>
-                                    <p class="text-lg font-semibold text-green">Zero</p>
+                                    <p class="text-lg font-semibold text-green font-heading">Zero</p>
                                     <p class="text-xs text-gray-400">14 months running</p>
                                 </div>
                                 <div>
                                     <p class="font-mono text-xs text-gray-400 mb-1">Support tickets</p>
-                                    <p class="text-lg font-semibold text-green">-61%</p>
+                                    <p class="text-lg font-semibold text-green font-heading">-61%</p>
                                     <p class="text-xs text-gray-400">billing-related</p>
                                 </div>
                             </div>
@@ -289,7 +337,7 @@
                 <!-- Tensor: Cost Dashboard -->
                 <article class="grid grid-cols-1 lg:grid-cols-5 gap-8">
                     <div class="lg:col-span-3">
-                        <h3 class="text-xl font-semibold text-gray-900 mb-1">GPU Cost Attribution Dashboard</h3>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-1 font-heading">GPU Cost Attribution Dashboard</h3>
                         <p class="text-sm text-green font-medium mb-4">Tensor Cloud, 2022</p>
                         <p class="text-gray-600 leading-relaxed mb-4">
                             $230K/month GPU bill and nobody could tell which teams or projects consumed what. Finance
@@ -306,7 +354,10 @@
                     <div class="lg:col-span-2 flex flex-col gap-3">
                         <div class="bg-white border border-gray-200 rounded-lg p-4">
                             <p class="font-mono text-xs text-gray-400 mb-1">Cost reduction</p>
-                            <p class="text-2xl font-semibold text-green">22%</p>
+                            <div class="flex items-baseline gap-2">
+                                <p class="text-2xl font-semibold text-green font-heading">22%</p>
+                                <span class="spark-bar"><span style="height:16px"></span><span style="height:12px"></span><span style="height:8px"></span><span style="height:6px"></span></span>
+                            </div>
                             <p class="text-xs text-gray-400 mt-1">First quarter after launch</p>
                         </div>
                         <div class="bg-white border border-gray-200 rounded-lg p-4">
@@ -323,7 +374,7 @@
                 <!-- Pinpoint: Query Engine -->
                 <article id="pinpoint" class="grid grid-cols-1 lg:grid-cols-5 gap-8">
                     <div class="lg:col-span-3">
-                        <h3 class="text-xl font-semibold text-gray-900 mb-1">Time-Series Query Engine</h3>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-1 font-heading">Time-Series Query Engine</h3>
                         <p class="text-sm text-green font-medium mb-4">Pinpoint Analytics, 2020</p>
                         <p class="text-gray-600 leading-relaxed mb-4">
                             Pinpoint's analytics dashboard was slow for high-volume customers. P95 load time was
@@ -340,7 +391,10 @@
                     <div class="lg:col-span-2 flex flex-col gap-3">
                         <div class="bg-white border border-gray-200 rounded-lg p-4">
                             <p class="font-mono text-xs text-gray-400 mb-1">Dashboard load time (p95)</p>
-                            <p class="text-2xl font-semibold text-gray-900">4.2s <span class="text-gray-300 font-normal mx-1">&rarr;</span> <span class="text-green">380ms</span></p>
+                            <div class="flex items-baseline gap-2">
+                                <p class="text-2xl font-semibold text-gray-900 font-heading">4.2s <span class="text-gray-300 font-normal mx-1">&rarr;</span> <span class="text-green">380ms</span></p>
+                                <span class="spark-bar"><span style="height:16px"></span><span style="height:10px"></span><span style="height:5px"></span><span style="height:3px"></span></span>
+                            </div>
                             <p class="text-xs text-gray-400 mt-1">11x improvement, same database</p>
                         </div>
                         <div class="bg-white border border-gray-200 rounded-lg p-4">
@@ -359,58 +413,70 @@
         <!-- Notes -->
         <section class="mt-24 mb-16">
             <div class="flex items-center gap-3 mb-10">
-                <h2 class="text-xs font-semibold uppercase tracking-widest text-green">Notes</h2>
+                <h2 class="text-xs font-semibold uppercase tracking-widest text-green font-heading">Notes</h2>
                 <div class="h-px flex-1 bg-gray-200"></div>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
                 <div class="bg-white border border-gray-200 rounded-lg p-5">
-                    <h3 class="font-medium text-gray-900 text-sm mb-2">On API pagination</h3>
+                    <h3 class="font-medium text-gray-900 text-sm mb-1 font-heading">On API pagination</h3>
+                    <p class="text-xs text-gray-400 mb-2">Feb 2026</p>
                     <p class="text-sm text-gray-500 leading-relaxed">
                         Cursor-based pagination is almost always what you want. Offset pagination breaks under
                         concurrent writes and gets slower linearly with page depth. The only exception is when
-                        users genuinely need to jump to page 47.
+                        users genuinely need to jump to page 47 -- and even then, I'd rather build a search
+                        feature than maintain offset-based queries at scale.
                     </p>
                 </div>
                 <div class="bg-white border border-gray-200 rounded-lg p-5">
-                    <h3 class="font-medium text-gray-900 text-sm mb-2">GraphQL vs. REST</h3>
+                    <h3 class="font-medium text-gray-900 text-sm mb-1 font-heading">GraphQL vs. REST</h3>
+                    <p class="text-xs text-gray-400 mb-2">Jan 2026</p>
                     <p class="text-sm text-gray-500 leading-relaxed">
                         GraphQL is great when your frontend makes lots of varied queries against a stable schema.
                         It's a bad fit when your API is mostly writes or when you need strong caching at the HTTP
                         layer. At Pinpoint, the switch to GraphQL cut dashboard DB round trips by 73%. I'd still
-                        use REST for most microservice-to-microservice calls.
+                        use REST for most microservice-to-microservice calls. The tooling maturity just isn't
+                        there for server-to-server GraphQL yet.
                     </p>
                 </div>
                 <div class="bg-white border border-gray-200 rounded-lg p-5">
-                    <h3 class="font-medium text-gray-900 text-sm mb-2">Chaos engineering, practically</h3>
+                    <h3 class="font-medium text-gray-900 text-sm mb-1 font-heading">Chaos engineering, practically</h3>
+                    <p class="text-xs text-gray-400 mb-2">Dec 2025</p>
                     <p class="text-sm text-gray-500 leading-relaxed">
                         We started Litmus chaos experiments at Bastion and found 8 critical failure modes in the
-                        first 2 months. The biggest win wasn't the bugs we found. It was that the team had already
+                        first 2 months. The biggest win wasn't the bugs we found -- it was that the team had already
                         rehearsed failures before they happened in production. Monthly game days became a team ritual.
+                        The on-call rotation got noticeably calmer after the third one.
                     </p>
                 </div>
                 <div class="bg-white border border-gray-200 rounded-lg p-5">
-                    <h3 class="font-medium text-gray-900 text-sm mb-2">Property-based testing for billing</h3>
+                    <h3 class="font-medium text-gray-900 text-sm mb-1 font-heading">Property-based testing for billing</h3>
+                    <p class="text-xs text-gray-400 mb-2">Nov 2025</p>
                     <p class="text-sm text-gray-500 leading-relaxed">
                         Hypothesis caught edge cases in our billing system that 200+ unit tests missed. When money
                         is involved, generating random concurrent scenarios is worth the setup cost. The invariant
                         is simple: total charged must equal total consumed. Proving it under concurrency is not.
+                        We found a race condition that had been silently double-charging 0.3% of invoices.
                     </p>
                 </div>
                 <div class="bg-white border border-gray-200 rounded-lg p-5">
-                    <h3 class="font-medium text-gray-900 text-sm mb-2">The D3.js learning curve</h3>
+                    <h3 class="font-medium text-gray-900 text-sm mb-1 font-heading">The D3.js learning curve</h3>
+                    <p class="text-xs text-gray-400 mb-2">Oct 2025</p>
                     <p class="text-sm text-gray-500 leading-relaxed">
                         D3 clicked for me when I stopped thinking of it as a charting library and started thinking
                         of it as a data-to-DOM binding engine. The GPU cost dashboard I built at Tensor would have
                         been painful with any higher-level library because of the drill-down interaction patterns.
+                        That said, for simple bar charts I'd still reach for Recharts or Nivo first.
                     </p>
                 </div>
                 <div class="bg-white border border-gray-200 rounded-lg p-5">
-                    <h3 class="font-medium text-gray-900 text-sm mb-2">Why I like Go for gateways</h3>
+                    <h3 class="font-medium text-gray-900 text-sm mb-1 font-heading">Why I like Go for gateways</h3>
+                    <p class="text-xs text-gray-400 mb-2">Sep 2025</p>
                     <p class="text-sm text-gray-500 leading-relaxed">
                         Goroutines per connection, predictable GC pauses at high throughput, easy to reason about
                         memory. The Bastion API gateway handles 2,400 req/sec and the tail latency stays flat. I
-                        wouldn't write a data pipeline in Go, but for request routing it's hard to beat.
+                        wouldn't write a data pipeline in Go, but for request routing it's hard to beat. Python's
+                        asyncio gets close on developer speed but the runtime overhead shows at p99.
                     </p>
                 </div>
             </div>
@@ -421,7 +487,7 @@
         <!-- Background -->
         <section class="py-16 sm:py-24">
             <div class="flex items-center gap-3 mb-10">
-                <h2 class="text-xs font-semibold uppercase tracking-widest text-green">Background</h2>
+                <h2 class="text-xs font-semibold uppercase tracking-widest text-green font-heading">Background</h2>
                 <div class="h-px flex-1 bg-gray-200"></div>
             </div>
 
@@ -435,7 +501,7 @@
                                 <div class="w-px flex-1 bg-gray-200"></div>
                             </div>
                             <div class="pb-8">
-                                <p class="text-sm font-semibold text-gray-900">Senior Software Engineer</p>
+                                <p class="text-sm font-semibold text-gray-900 font-heading">Senior Software Engineer</p>
                                 <p class="text-sm text-green">Bastion Security</p>
                                 <p class="text-xs text-gray-400 mt-0.5">Jan 2023 -- Present / San Francisco</p>
                                 <p class="text-sm text-gray-500 mt-2 leading-relaxed">
@@ -451,7 +517,7 @@
                                 <div class="w-px flex-1 bg-gray-200"></div>
                             </div>
                             <div class="pb-8">
-                                <p class="text-sm font-semibold text-gray-900">Backend Engineer</p>
+                                <p class="text-sm font-semibold text-gray-900 font-heading">Backend Engineer</p>
                                 <p class="text-sm text-green">Tensor Cloud</p>
                                 <p class="text-xs text-gray-400 mt-0.5">Jun 2021 -- Dec 2022 / San Francisco</p>
                                 <p class="text-sm text-gray-500 mt-2 leading-relaxed">
@@ -467,7 +533,7 @@
                                 <div class="w-px flex-1 bg-gray-200"></div>
                             </div>
                             <div class="pb-8">
-                                <p class="text-sm font-semibold text-gray-900">Software Engineer</p>
+                                <p class="text-sm font-semibold text-gray-900 font-heading">Software Engineer</p>
                                 <p class="text-sm text-green">Pinpoint Analytics</p>
                                 <p class="text-xs text-gray-400 mt-0.5">Jul 2019 -- May 2021 / Ann Arbor, MI</p>
                                 <p class="text-sm text-gray-500 mt-2 leading-relaxed">
@@ -482,7 +548,7 @@
                                 <div class="w-2.5 h-2.5 rounded-full bg-gray-300 mt-1.5 flex-shrink-0"></div>
                             </div>
                             <div>
-                                <p class="text-sm font-semibold text-gray-900">B.S. Computer Science</p>
+                                <p class="text-sm font-semibold text-gray-900 font-heading">B.S. Computer Science</p>
                                 <p class="text-sm text-green">University of Michigan</p>
                                 <p class="text-xs text-gray-400 mt-0.5">2015 -- 2019 / Ann Arbor, MI</p>
                                 <p class="text-sm text-gray-500 mt-2 leading-relaxed">
@@ -497,7 +563,7 @@
                 <!-- Sidebar -->
                 <div class="space-y-8">
                     <div>
-                        <h3 class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">Languages</h3>
+                        <h3 class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3 font-heading">Languages</h3>
                         <div class="space-y-2 text-sm">
                             <div class="flex items-center justify-between">
                                 <span class="text-gray-700">Python</span>
@@ -519,7 +585,7 @@
                     </div>
 
                     <div>
-                        <h3 class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">Infrastructure</h3>
+                        <h3 class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3 font-heading">Infrastructure</h3>
                         <div class="flex flex-wrap gap-1.5">
                             <span class="text-xs px-2 py-1 bg-stone rounded text-gray-500">AWS</span>
                             <span class="text-xs px-2 py-1 bg-stone rounded text-gray-500">Kubernetes</span>
@@ -531,7 +597,7 @@
                     </div>
 
                     <div>
-                        <h3 class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">Data</h3>
+                        <h3 class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3 font-heading">Data</h3>
                         <div class="flex flex-wrap gap-1.5">
                             <span class="text-xs px-2 py-1 bg-stone rounded text-gray-500">PostgreSQL</span>
                             <span class="text-xs px-2 py-1 bg-stone rounded text-gray-500">Kafka</span>
@@ -542,7 +608,7 @@
                     </div>
 
                     <div>
-                        <h3 class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">Observability</h3>
+                        <h3 class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3 font-heading">Observability</h3>
                         <div class="flex flex-wrap gap-1.5">
                             <span class="text-xs px-2 py-1 bg-stone rounded text-gray-500">Datadog</span>
                             <span class="text-xs px-2 py-1 bg-stone rounded text-gray-500">Prometheus</span>
@@ -552,7 +618,7 @@
                     </div>
 
                     <div>
-                        <h3 class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">Frontend</h3>
+                        <h3 class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3 font-heading">Frontend</h3>
                         <div class="flex flex-wrap gap-1.5">
                             <span class="text-xs px-2 py-1 bg-stone rounded text-gray-500">React</span>
                             <span class="text-xs px-2 py-1 bg-stone rounded text-gray-500">Next.js</span>
@@ -577,7 +643,7 @@
                     Based in San Francisco. Available in two weeks. Remote or hybrid works.
                 </p>
             </div>
-            <a href="mailto:ryan@ryanmitchell.me" class="inline-flex items-center gap-2 px-5 py-2.5 bg-green text-white text-sm font-medium rounded-lg hover:bg-green-light transition-colors">
+            <a href="mailto:hello@ryanmitch.me" class="inline-flex items-center gap-2 px-5 py-2.5 bg-green text-white text-sm font-medium rounded-lg hover:bg-green-light transition-colors font-heading">
                 Get in touch
             </a>
         </div>
