@@ -3,152 +3,583 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ryan Mitchell — Senior Software Engineer</title>
+    <title>Ryan Mitchell</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
-                    colors: { accent: '#386641' }
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        green: {
+                            DEFAULT: '#386641',
+                            light: '#6a994e',
+                            pale: '#a7c957',
+                            bg: '#f0f5ec',
+                        },
+                        sand: '#faf9f6',
+                        stone: '#f5f4f0',
+                    }
                 }
             }
         }
     </script>
     <style>
-        * { font-family: 'Inter', system-ui, sans-serif; }
+        body { font-family: 'Inter', system-ui, sans-serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        ::selection { background: #386641; color: #fff; }
     </style>
 </head>
-<body class="bg-[#FAFAF8] text-gray-800 antialiased">
+<body class="bg-sand text-gray-700 antialiased">
 
     <!-- Header -->
-    <header class="bg-white">
-        <div class="max-w-3xl mx-auto px-6 py-14 sm:py-18">
-            <div class="flex flex-col sm:flex-row items-center sm:items-start gap-6">
-                <img src="headshot.png" alt="Ryan Mitchell" class="w-28 h-28 sm:w-[120px] sm:h-[120px] rounded-full object-cover border-[3px] border-[#386641]/10 flex-shrink-0">
-                <div class="text-center sm:text-left">
-                    <h1 class="text-3xl sm:text-4xl font-bold text-gray-900">Ryan Mitchell</h1>
-                    <p class="mt-2 text-lg text-accent font-medium">Senior Software Engineer</p>
-                    <p class="mt-1 text-sm text-gray-400">San Francisco, CA</p>
+    <header class="max-w-5xl mx-auto px-6 pt-12 sm:pt-20 pb-16 sm:pb-24">
+        <div class="flex flex-col sm:flex-row items-start gap-6 sm:gap-10">
+            <img src="headshot.png" alt="Ryan Mitchell" class="w-20 h-20 rounded-full object-cover border-2 border-green/10 flex-shrink-0">
+            <div>
+                <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">Ryan Mitchell</h1>
+                <p class="mt-3 text-lg text-gray-500 leading-relaxed max-w-2xl">
+                    Software engineer in San Francisco. I build backend systems, data pipelines, and occasionally
+                    the dashboards that make sense of them. Currently at
+                    <a href="#bastion" class="text-green hover:underline">Bastion Security</a>, previously
+                    <a href="#tensor" class="text-green hover:underline">Tensor Cloud</a> and
+                    <a href="#pinpoint" class="text-green hover:underline">Pinpoint Analytics</a>.
+                    Michigan grad. Mountain biker when the fog clears.
+                </p>
+                <div class="mt-5 flex flex-wrap gap-4 text-sm">
+                    <a href="https://github.com/rmitchell-dev" class="inline-flex items-center gap-1.5 text-gray-400 hover:text-green transition-colors">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                        GitHub
+                    </a>
+                    <a href="https://linkedin.com/in/ryanmitchelldev" class="inline-flex items-center gap-1.5 text-gray-400 hover:text-green transition-colors">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        LinkedIn
+                    </a>
+                    <a href="mailto:ryan@ryanmitchell.me" class="inline-flex items-center gap-1.5 text-gray-400 hover:text-green transition-colors">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+                        Email
+                    </a>
                 </div>
             </div>
         </div>
     </header>
 
-    <main class="max-w-3xl mx-auto px-6">
+    <main class="max-w-5xl mx-auto px-6">
 
-        <!-- About -->
-        <section class="py-12 sm:py-14">
-            <h2 class="text-xs font-bold uppercase tracking-widest text-accent/70 mb-4">About</h2>
-            <p class="text-gray-600 leading-relaxed text-[15px]">
-                I build backend systems and data infrastructure at startups. Over the past 5 years I've worked on threat detection pipelines, ML serving infrastructure, and API analytics tooling -- always focused on making systems fast, reliable, and cost-efficient. I'm most comfortable in the layer between application logic and infrastructure, and I care about writing systems that are as easy to operate as they are to build.
-            </p>
+        <!-- Projects -->
+        <section>
+            <div class="flex items-center gap-3 mb-10">
+                <h2 class="text-xs font-semibold uppercase tracking-widest text-green">Things I've Built</h2>
+                <div class="h-px flex-1 bg-gray-200"></div>
+            </div>
+
+            <!-- Project Grid -->
+            <div class="space-y-16">
+
+                <!-- Bastion: Streaming Pipeline -->
+                <article id="bastion" class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+                    <div class="lg:col-span-3">
+                        <div class="flex items-baseline gap-3 mb-1">
+                            <h3 class="text-xl font-semibold text-gray-900">Streaming Threat Detection</h3>
+                        </div>
+                        <p class="text-sm text-green font-medium mb-4">Bastion Security, 2023</p>
+                        <p class="text-gray-600 leading-relaxed mb-4">
+                            Bastion's threat detection polled cloud APIs on a 45-second batch interval. Two enterprise
+                            prospects walked during POC evaluations because of the detection gap. I proposed and led the
+                            migration to a Kafka-based streaming architecture with event subscriptions from CloudTrail
+                            and cloud provider webhooks.
+                        </p>
+                        <p class="text-gray-600 leading-relaxed mb-4">
+                            The interesting part was the stateful stream processor. It correlates events across multiple
+                            cloud sources in real-time with exactly-once processing guarantees via idempotent consumers.
+                            I ran a 3-week parallel deployment where both the old and new systems processed live traffic
+                            so we could validate correctness before cutting over.
+                        </p>
+                        <p class="text-gray-500 text-sm leading-relaxed">
+                            Alert latency dropped from 45 seconds to under 3 seconds. We re-engaged both lost prospects
+                            and one converted to a $280K ARR contract. The streaming architecture also unblocked a "live
+                            threat map" feature that product had deprioritized as technically infeasible.
+                        </p>
+                    </div>
+                    <div class="lg:col-span-2 flex flex-col gap-3">
+                        <div class="bg-white border border-gray-200 rounded-lg p-4">
+                            <p class="font-mono text-xs text-gray-400 mb-1">Before / After</p>
+                            <p class="text-2xl font-semibold text-gray-900">45s <span class="text-gray-300 font-normal mx-1">&rarr;</span> <span class="text-green">&lt;3s</span></p>
+                            <p class="text-xs text-gray-400 mt-1">Alert latency</p>
+                        </div>
+                        <div class="bg-white border border-gray-200 rounded-lg p-4">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="font-mono text-xs px-2 py-1 bg-green-bg rounded text-green">Go</span>
+                                <span class="font-mono text-xs px-2 py-1 bg-green-bg rounded text-green">Kafka</span>
+                                <span class="font-mono text-xs px-2 py-1 bg-green-bg rounded text-green">CloudTrail</span>
+                                <span class="font-mono text-xs px-2 py-1 bg-green-bg rounded text-green">Idempotent Consumers</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Bastion: API Gateway -->
+                <article class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+                    <div class="lg:col-span-3">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-1">Multi-Tenant API Gateway</h3>
+                        <p class="text-sm text-green font-medium mb-4">Bastion Security, 2023</p>
+                        <p class="text-gray-600 leading-relaxed mb-4">
+                            The existing API layer was a single Flask app with tenant routing in middleware. A noisy
+                            tenant incident caused a 12-minute partial outage across all customers. At 800 req/sec,
+                            p99 was already 420ms and degrading.
+                        </p>
+                        <p class="text-gray-600 leading-relaxed mb-4">
+                            I built a new gateway in Go with tenant-scoped connection pools, adaptive rate limiting,
+                            and circuit breakers per downstream service. Rolled it out as a gradual traffic shift using
+                            weighted DNS, migrating 5% at a time over two weeks while watching latency percentiles.
+                            Credentials rotate automatically every 72 hours with zero downtime.
+                        </p>
+                        <p class="text-gray-500 text-sm leading-relaxed">
+                            The gateway now handles 2,400 req/sec at p99 of 68ms. Noisy-tenant incidents: zero since launch.
+                            Processes $18M in ARR worth of customer traffic.
+                        </p>
+                    </div>
+                    <div class="lg:col-span-2 flex flex-col gap-3">
+                        <div class="bg-white border border-gray-200 rounded-lg p-4">
+                            <p class="font-mono text-xs text-gray-400 mb-1">Throughput</p>
+                            <p class="text-2xl font-semibold text-gray-900">2,400 <span class="text-sm font-normal text-gray-400">req/sec</span></p>
+                            <p class="text-xs text-gray-400 mt-1">p99: 68ms (was 420ms)</p>
+                        </div>
+                        <div class="bg-white border border-gray-200 rounded-lg p-4">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="font-mono text-xs px-2 py-1 bg-green-bg rounded text-green">Go</span>
+                                <span class="font-mono text-xs px-2 py-1 bg-green-bg rounded text-green">Rate Limiting</span>
+                                <span class="font-mono text-xs px-2 py-1 bg-green-bg rounded text-green">Circuit Breakers</span>
+                                <span class="font-mono text-xs px-2 py-1 bg-green-bg rounded text-green">DNS Routing</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Bastion: K8s Migration -->
+                <article class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+                    <div class="lg:col-span-3">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-1">ECS to Kubernetes Migration</h3>
+                        <p class="text-sm text-green font-medium mb-4">Bastion Security, 2024</p>
+                        <p class="text-gray-600 leading-relaxed mb-4">
+                            14 microservices on ECS with manually maintained task definitions. Deployments took 18
+                            minutes, rollbacks required SSH, and infrastructure costs had grown 40% YoY without matching
+                            traffic growth. I wrote Helm charts for all 14 services with standardized health checks,
+                            resource limits, and auto-scaling.
+                        </p>
+                        <p class="text-gray-600 leading-relaxed">
+                            Built a GitOps pipeline with ArgoCD for declarative deployments. Migrated in 4 waves over 6
+                            weeks, starting with the lowest-risk internal services. Ran hands-on workshops so every
+                            engineer could deploy and debug independently.
+                        </p>
+                    </div>
+                    <div class="lg:col-span-2 flex flex-col gap-3">
+                        <div class="bg-white border border-gray-200 rounded-lg p-4">
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <p class="font-mono text-xs text-gray-400 mb-1">Deploy time</p>
+                                    <p class="text-lg font-semibold text-green">4 min</p>
+                                    <p class="text-xs text-gray-400">was 18 min</p>
+                                </div>
+                                <div>
+                                    <p class="font-mono text-xs text-gray-400 mb-1">Cost savings</p>
+                                    <p class="text-lg font-semibold text-green">31%</p>
+                                    <p class="text-xs text-gray-400">$14K/month</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white border border-gray-200 rounded-lg p-4">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="font-mono text-xs px-2 py-1 bg-green-bg rounded text-green">Kubernetes</span>
+                                <span class="font-mono text-xs px-2 py-1 bg-green-bg rounded text-green">Helm</span>
+                                <span class="font-mono text-xs px-2 py-1 bg-green-bg rounded text-green">ArgoCD</span>
+                                <span class="font-mono text-xs px-2 py-1 bg-green-bg rounded text-green">EKS</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Tensor: ML Serving -->
+                <article id="tensor" class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+                    <div class="lg:col-span-3">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-1">ML Model Serving Layer</h3>
+                        <p class="text-sm text-green font-medium mb-4">Tensor Cloud, 2021-2022</p>
+                        <p class="text-gray-600 leading-relaxed mb-4">
+                            Tensor Cloud's inference layer was a prototype Flask service. At 400 req/sec, response times
+                            exceeded 500ms and GPU utilization was below 35% because requests queued sequentially.
+                        </p>
+                        <p class="text-gray-600 leading-relaxed mb-4">
+                            I designed a two-tier architecture: a Go request router handling connection management and
+                            batching, fronting Python inference workers with shared GPU memory pools. Adaptive batching
+                            groups requests by model version. An LRU response cache with TTL hits 23% of requests,
+                            giving free headroom. Health-based routing avoids workers mid-model-load.
+                        </p>
+                        <p class="text-gray-500 text-sm leading-relaxed">
+                            The serving layer handles 1,800 req/sec at p99 of 92ms. GPU utilization jumped from 35% to
+                            78%. The architecture became the template for Tensor's next two product lines.
+                        </p>
+                    </div>
+                    <div class="lg:col-span-2 flex flex-col gap-3">
+                        <div class="bg-white border border-gray-200 rounded-lg p-4">
+                            <p class="font-mono text-xs text-gray-400 mb-1">GPU utilization</p>
+                            <p class="text-2xl font-semibold text-gray-900">35% <span class="text-gray-300 font-normal mx-1">&rarr;</span> <span class="text-green">78%</span></p>
+                            <p class="text-xs text-gray-400 mt-1">p99: 92ms at 1,800 req/sec</p>
+                        </div>
+                        <div class="bg-white border border-gray-200 rounded-lg p-4">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="font-mono text-xs px-2 py-1 bg-green-bg rounded text-green">Go</span>
+                                <span class="font-mono text-xs px-2 py-1 bg-green-bg rounded text-green">Python</span>
+                                <span class="font-mono text-xs px-2 py-1 bg-green-bg rounded text-green">GPU Pools</span>
+                                <span class="font-mono text-xs px-2 py-1 bg-green-bg rounded text-green">Adaptive Batching</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Tensor: Event-Driven Billing -->
+                <article class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+                    <div class="lg:col-span-3">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-1">Event-Driven Billing Migration</h3>
+                        <p class="text-sm text-green font-medium mb-4">Tensor Cloud, 2022</p>
+                        <p class="text-gray-600 leading-relaxed mb-4">
+                            Billing lived inside a Django monolith. Race conditions between usage tracking and the
+                            billing cron caused double-charges -- $34K in refunds over 6 months. Customer trust was
+                            eroding.
+                        </p>
+                        <p class="text-gray-600 leading-relaxed">
+                            I extracted billing into a standalone service. Usage events publish to Kafka with idempotent
+                            producers. The consumer processes with exactly-once semantics using the transactional outbox
+                            pattern. I built a real-time usage dashboard so customers see charges accumulate live, and
+                            wrote property-based tests (Hypothesis) to verify billing invariants under concurrent load.
+                            Zero billing discrepancies in 14 months since launch.
+                        </p>
+                    </div>
+                    <div class="lg:col-span-2 flex flex-col gap-3">
+                        <div class="bg-white border border-gray-200 rounded-lg p-4">
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <p class="font-mono text-xs text-gray-400 mb-1">Billing errors</p>
+                                    <p class="text-lg font-semibold text-green">Zero</p>
+                                    <p class="text-xs text-gray-400">14 months running</p>
+                                </div>
+                                <div>
+                                    <p class="font-mono text-xs text-gray-400 mb-1">Support tickets</p>
+                                    <p class="text-lg font-semibold text-green">-61%</p>
+                                    <p class="text-xs text-gray-400">billing-related</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white border border-gray-200 rounded-lg p-4">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="font-mono text-xs px-2 py-1 bg-green-bg rounded text-green">Kafka</span>
+                                <span class="font-mono text-xs px-2 py-1 bg-green-bg rounded text-green">Outbox Pattern</span>
+                                <span class="font-mono text-xs px-2 py-1 bg-green-bg rounded text-green">Hypothesis</span>
+                                <span class="font-mono text-xs px-2 py-1 bg-green-bg rounded text-green">React</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Tensor: Cost Dashboard -->
+                <article class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+                    <div class="lg:col-span-3">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-1">GPU Cost Attribution Dashboard</h3>
+                        <p class="text-sm text-green font-medium mb-4">Tensor Cloud, 2022</p>
+                        <p class="text-gray-600 leading-relaxed mb-4">
+                            $230K/month GPU bill and nobody could tell which teams or projects consumed what. Finance
+                            was manually attributing costs from AWS billing exports in spreadsheets.
+                        </p>
+                        <p class="text-gray-600 leading-relaxed">
+                            Built the dashboard in React with D3.js. Designed a cost attribution model using Kubernetes
+                            labels to tag GPU hours by team, project, and model type. Wrote an ETL pipeline enriching
+                            AWS Cost Explorer data with pod metadata every 15 minutes. Drill-down views, trend lines,
+                            anomaly highlighting for spend spikes. Adopted by all 8 engineering teams in the first week.
+                            Identified $51K/month in idle GPU instances.
+                        </p>
+                    </div>
+                    <div class="lg:col-span-2 flex flex-col gap-3">
+                        <div class="bg-white border border-gray-200 rounded-lg p-4">
+                            <p class="font-mono text-xs text-gray-400 mb-1">Cost reduction</p>
+                            <p class="text-2xl font-semibold text-green">22%</p>
+                            <p class="text-xs text-gray-400 mt-1">First quarter after launch</p>
+                        </div>
+                        <div class="bg-white border border-gray-200 rounded-lg p-4">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="font-mono text-xs px-2 py-1 bg-green-bg rounded text-green">React</span>
+                                <span class="font-mono text-xs px-2 py-1 bg-green-bg rounded text-green">D3.js</span>
+                                <span class="font-mono text-xs px-2 py-1 bg-green-bg rounded text-green">AWS Cost Explorer</span>
+                                <span class="font-mono text-xs px-2 py-1 bg-green-bg rounded text-green">Kubernetes Labels</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Pinpoint: Query Engine -->
+                <article id="pinpoint" class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+                    <div class="lg:col-span-3">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-1">Time-Series Query Engine</h3>
+                        <p class="text-sm text-green font-medium mb-4">Pinpoint Analytics, 2020</p>
+                        <p class="text-gray-600 leading-relaxed mb-4">
+                            Pinpoint's analytics dashboard was slow for high-volume customers. P95 load time was
+                            4.2 seconds, with some customers hitting 8+. The root cause was full table scans on a
+                            900M-row time-series table. The team didn't have bandwidth for a new database.
+                        </p>
+                        <p class="text-gray-600 leading-relaxed">
+                            I stayed within PostgreSQL and implemented a multi-pronged strategy: time-based monthly
+                            partitioning, materialized views for the 5 most common aggregations on staggered refresh
+                            schedules, partial indexes on customer_id + time range, and raw SQL replacing ORM queries
+                            where the ORM generated suboptimal partition pruning plans.
+                        </p>
+                    </div>
+                    <div class="lg:col-span-2 flex flex-col gap-3">
+                        <div class="bg-white border border-gray-200 rounded-lg p-4">
+                            <p class="font-mono text-xs text-gray-400 mb-1">Dashboard load time (p95)</p>
+                            <p class="text-2xl font-semibold text-gray-900">4.2s <span class="text-gray-300 font-normal mx-1">&rarr;</span> <span class="text-green">380ms</span></p>
+                            <p class="text-xs text-gray-400 mt-1">11x improvement, same database</p>
+                        </div>
+                        <div class="bg-white border border-gray-200 rounded-lg p-4">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="font-mono text-xs px-2 py-1 bg-green-bg rounded text-green">PostgreSQL</span>
+                                <span class="font-mono text-xs px-2 py-1 bg-green-bg rounded text-green">Partitioning</span>
+                                <span class="font-mono text-xs px-2 py-1 bg-green-bg rounded text-green">Materialized Views</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
         </section>
 
-        <div class="h-px bg-gray-200/50"></div>
-
-        <!-- Experience -->
-        <section class="py-12 sm:py-14">
-            <h2 class="text-xs font-bold uppercase tracking-widest text-accent/70 mb-8">Experience</h2>
-
-            <div class="mb-10">
-                <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-1">
-                    <h3 class="text-lg font-semibold text-gray-900">Senior Software Engineer</h3>
-                    <span class="text-sm text-gray-400 mt-0.5 sm:mt-0">Jan 2023 -- Present</span>
-                </div>
-                <p class="text-sm text-accent font-medium mb-3">Bastion Security &middot; Series C &middot; 180 employees</p>
-                <ul class="space-y-2 text-[15px] text-gray-600 leading-relaxed">
-                    <li>Redesigned the threat detection pipeline from batch-polling to Kafka streaming, reducing alert latency from 45 seconds to under 3 seconds.</li>
-                    <li>Built a multi-tenant API gateway in Go serving 2,400 req/sec at p99 of 68ms, with tenant-scoped rate limiting and automatic credential rotation.</li>
-                    <li>Led migration of 14 microservices from ECS to Kubernetes (EKS), cutting infrastructure costs by 31% and reducing deploy times from 18 minutes to 4 minutes.</li>
-                    <li>Designed and shipped a compliance reporting engine that generates SOC 2 audit trails across 6 AWS services, reducing customer audit prep from 2 weeks to 3 hours.</li>
-                    <li>Implemented distributed tracing with OpenTelemetry across 22 services, reducing MTTR from 47 minutes to 12 minutes.</li>
-                </ul>
+        <!-- Notes -->
+        <section class="mt-24 mb-16">
+            <div class="flex items-center gap-3 mb-10">
+                <h2 class="text-xs font-semibold uppercase tracking-widest text-green">Notes</h2>
+                <div class="h-px flex-1 bg-gray-200"></div>
             </div>
 
-            <div class="mb-10">
-                <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-1">
-                    <h3 class="text-lg font-semibold text-gray-900">Backend Engineer</h3>
-                    <span class="text-sm text-gray-400 mt-0.5 sm:mt-0">Jun 2021 -- Dec 2022</span>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                <div class="bg-white border border-gray-200 rounded-lg p-5">
+                    <h3 class="font-medium text-gray-900 text-sm mb-2">On API pagination</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">
+                        Cursor-based pagination is almost always what you want. Offset pagination breaks under
+                        concurrent writes and gets slower linearly with page depth. The only exception is when
+                        users genuinely need to jump to page 47.
+                    </p>
                 </div>
-                <p class="text-sm text-accent font-medium mb-3">Tensor Cloud &middot; Series B &middot; 110 employees</p>
-                <ul class="space-y-2 text-[15px] text-gray-600 leading-relaxed">
-                    <li>Built the model serving API in Python and Go, handling 1,800 inference req/sec with p99 latency of 92ms through connection pooling and response caching.</li>
-                    <li>Designed a data pipeline on Airflow and Kafka processing 3.2M training events daily, with automatic schema validation that caught 99.7% of malformed payloads.</li>
-                    <li>Migrated the billing system to an event-driven architecture, eliminating double-charge bugs that had caused $34K in refunds over 6 months.</li>
-                    <li>Created an internal cost attribution dashboard in React and D3.js that led to a 22% reduction in idle compute costs within the first quarter.</li>
-                </ul>
-            </div>
-
-            <div class="mb-10">
-                <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-1">
-                    <h3 class="text-lg font-semibold text-gray-900">Software Engineer</h3>
-                    <span class="text-sm text-gray-400 mt-0.5 sm:mt-0">Jul 2019 -- May 2021</span>
+                <div class="bg-white border border-gray-200 rounded-lg p-5">
+                    <h3 class="font-medium text-gray-900 text-sm mb-2">GraphQL vs. REST</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">
+                        GraphQL is great when your frontend makes lots of varied queries against a stable schema.
+                        It's a bad fit when your API is mostly writes or when you need strong caching at the HTTP
+                        layer. At Pinpoint, the switch to GraphQL cut dashboard DB round trips by 73%. I'd still
+                        use REST for most microservice-to-microservice calls.
+                    </p>
                 </div>
-                <p class="text-sm text-accent font-medium mb-3">Pinpoint Analytics &middot; Seed Stage &middot; 30 employees</p>
-                <ul class="space-y-2 text-[15px] text-gray-600 leading-relaxed">
-                    <li>Designed and built the data ingestion service in Python, processing 850K API call records daily with 99.95% uptime over 18 months.</li>
-                    <li>Built a time-series query engine on PostgreSQL with custom partitioning, reducing p95 dashboard load time from 4.2 seconds to 380ms.</li>
-                    <li>Developed the customer-facing analytics dashboard in React with D3.js, increasing daily active usage by 40% within 2 months of launch.</li>
-                </ul>
-            </div>
-        </section>
-
-        <div class="h-px bg-gray-200/50"></div>
-
-        <!-- Skills -->
-        <section class="py-12 sm:py-14">
-            <h2 class="text-xs font-bold uppercase tracking-widest text-accent/70 mb-6">Skills</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 text-[15px]">
-                <div>
-                    <h3 class="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-1.5">Languages</h3>
-                    <p class="text-gray-600">Python, TypeScript, Go, SQL</p>
+                <div class="bg-white border border-gray-200 rounded-lg p-5">
+                    <h3 class="font-medium text-gray-900 text-sm mb-2">Chaos engineering, practically</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">
+                        We started Litmus chaos experiments at Bastion and found 8 critical failure modes in the
+                        first 2 months. The biggest win wasn't the bugs we found. It was that the team had already
+                        rehearsed failures before they happened in production. Monthly game days became a team ritual.
+                    </p>
                 </div>
-                <div>
-                    <h3 class="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-1.5">Infrastructure</h3>
-                    <p class="text-gray-600">AWS, Kubernetes, Docker, Terraform, Helm</p>
+                <div class="bg-white border border-gray-200 rounded-lg p-5">
+                    <h3 class="font-medium text-gray-900 text-sm mb-2">Property-based testing for billing</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">
+                        Hypothesis caught edge cases in our billing system that 200+ unit tests missed. When money
+                        is involved, generating random concurrent scenarios is worth the setup cost. The invariant
+                        is simple: total charged must equal total consumed. Proving it under concurrency is not.
+                    </p>
                 </div>
-                <div>
-                    <h3 class="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-1.5">Data & Streaming</h3>
-                    <p class="text-gray-600">Kafka, Airflow, PostgreSQL, Redis, Spark</p>
+                <div class="bg-white border border-gray-200 rounded-lg p-5">
+                    <h3 class="font-medium text-gray-900 text-sm mb-2">The D3.js learning curve</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">
+                        D3 clicked for me when I stopped thinking of it as a charting library and started thinking
+                        of it as a data-to-DOM binding engine. The GPU cost dashboard I built at Tensor would have
+                        been painful with any higher-level library because of the drill-down interaction patterns.
+                    </p>
                 </div>
-                <div>
-                    <h3 class="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-1.5">Observability</h3>
-                    <p class="text-gray-600">Datadog, Prometheus, Grafana, OpenTelemetry</p>
+                <div class="bg-white border border-gray-200 rounded-lg p-5">
+                    <h3 class="font-medium text-gray-900 text-sm mb-2">Why I like Go for gateways</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">
+                        Goroutines per connection, predictable GC pauses at high throughput, easy to reason about
+                        memory. The Bastion API gateway handles 2,400 req/sec and the tail latency stays flat. I
+                        wouldn't write a data pipeline in Go, but for request routing it's hard to beat.
+                    </p>
                 </div>
             </div>
         </section>
 
-        <div class="h-px bg-gray-200/50"></div>
+        <div class="h-px bg-gray-200"></div>
 
-        <!-- Education -->
-        <section class="py-12 sm:py-14">
-            <h2 class="text-xs font-bold uppercase tracking-widest text-accent/70 mb-4">Education</h2>
-            <div>
-                <h3 class="font-semibold text-gray-900">University of Michigan</h3>
-                <p class="text-sm text-gray-500 mt-0.5">B.S. Computer Science &middot; 2019</p>
+        <!-- Background -->
+        <section class="py-16 sm:py-24">
+            <div class="flex items-center gap-3 mb-10">
+                <h2 class="text-xs font-semibold uppercase tracking-widest text-green">Background</h2>
+                <div class="h-px flex-1 bg-gray-200"></div>
             </div>
-        </section>
 
-        <div class="h-px bg-gray-200/50"></div>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-16">
+                <div class="lg:col-span-2">
+                    <!-- Timeline -->
+                    <div class="space-y-8">
+                        <div class="flex gap-4">
+                            <div class="flex flex-col items-center">
+                                <div class="w-2.5 h-2.5 rounded-full bg-green mt-1.5 flex-shrink-0"></div>
+                                <div class="w-px flex-1 bg-gray-200"></div>
+                            </div>
+                            <div class="pb-8">
+                                <p class="text-sm font-semibold text-gray-900">Senior Software Engineer</p>
+                                <p class="text-sm text-green">Bastion Security</p>
+                                <p class="text-xs text-gray-400 mt-0.5">Jan 2023 -- Present / San Francisco</p>
+                                <p class="text-sm text-gray-500 mt-2 leading-relaxed">
+                                    Threat detection pipelines, multi-tenant API gateway, Kubernetes migration, compliance
+                                    reporting engine, distributed tracing across 22 services. Also introduced chaos engineering.
+                                </p>
+                            </div>
+                        </div>
 
-        <!-- Contact -->
-        <section class="py-12 sm:py-14">
-            <h2 class="text-xs font-bold uppercase tracking-widest text-accent/70 mb-4">Contact</h2>
-            <div class="space-y-2 text-[15px]">
-                <p class="text-gray-600"><span class="text-gray-400 inline-block w-16">Email</span> <a href="mailto:ryan@ryanmitchell.me" class="text-accent hover:underline">ryan@ryanmitchell.me</a></p>
-                <p class="text-gray-600"><span class="text-gray-400 inline-block w-16">Based in</span> San Francisco, CA</p>
+                        <div class="flex gap-4">
+                            <div class="flex flex-col items-center">
+                                <div class="w-2.5 h-2.5 rounded-full bg-green-light mt-1.5 flex-shrink-0"></div>
+                                <div class="w-px flex-1 bg-gray-200"></div>
+                            </div>
+                            <div class="pb-8">
+                                <p class="text-sm font-semibold text-gray-900">Backend Engineer</p>
+                                <p class="text-sm text-green">Tensor Cloud</p>
+                                <p class="text-xs text-gray-400 mt-0.5">Jun 2021 -- Dec 2022 / San Francisco</p>
+                                <p class="text-sm text-gray-500 mt-2 leading-relaxed">
+                                    ML model serving infrastructure, event-driven billing system, data pipeline on Airflow
+                                    and Kafka (3.2M events/day), GPU cost attribution dashboard in React and D3.js.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="flex flex-col items-center">
+                                <div class="w-2.5 h-2.5 rounded-full bg-green-pale mt-1.5 flex-shrink-0"></div>
+                                <div class="w-px flex-1 bg-gray-200"></div>
+                            </div>
+                            <div class="pb-8">
+                                <p class="text-sm font-semibold text-gray-900">Software Engineer</p>
+                                <p class="text-sm text-green">Pinpoint Analytics</p>
+                                <p class="text-xs text-gray-400 mt-0.5">Jul 2019 -- May 2021 / Ann Arbor, MI</p>
+                                <p class="text-sm text-gray-500 mt-2 leading-relaxed">
+                                    Data ingestion service (850K events/day), time-series query optimization, GraphQL API
+                                    layer with DataLoader batching, analytics dashboard in React and D3.js. Promoted from junior after 14 months.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="flex flex-col items-center">
+                                <div class="w-2.5 h-2.5 rounded-full bg-gray-300 mt-1.5 flex-shrink-0"></div>
+                            </div>
+                            <div>
+                                <p class="text-sm font-semibold text-gray-900">B.S. Computer Science</p>
+                                <p class="text-sm text-green">University of Michigan</p>
+                                <p class="text-xs text-gray-400 mt-0.5">2015 -- 2019 / Ann Arbor, MI</p>
+                                <p class="text-sm text-gray-500 mt-2 leading-relaxed">
+                                    GPA 3.71. Senior capstone: distributed key-value store with Raft consensus in Go.
+                                    TA for EECS 485 (Web Systems).
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">Languages</h3>
+                        <div class="space-y-2 text-sm">
+                            <div class="flex items-center justify-between">
+                                <span class="text-gray-700">Python</span>
+                                <span class="font-mono text-xs text-gray-400">5 years</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-gray-700">Go</span>
+                                <span class="font-mono text-xs text-gray-400">4 years</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-gray-700">TypeScript</span>
+                                <span class="font-mono text-xs text-gray-400">5 years</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-gray-700">SQL</span>
+                                <span class="font-mono text-xs text-gray-400">5 years</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">Infrastructure</h3>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="text-xs px-2 py-1 bg-stone rounded text-gray-500">AWS</span>
+                            <span class="text-xs px-2 py-1 bg-stone rounded text-gray-500">Kubernetes</span>
+                            <span class="text-xs px-2 py-1 bg-stone rounded text-gray-500">Docker</span>
+                            <span class="text-xs px-2 py-1 bg-stone rounded text-gray-500">Terraform</span>
+                            <span class="text-xs px-2 py-1 bg-stone rounded text-gray-500">Helm</span>
+                            <span class="text-xs px-2 py-1 bg-stone rounded text-gray-500">ArgoCD</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">Data</h3>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="text-xs px-2 py-1 bg-stone rounded text-gray-500">PostgreSQL</span>
+                            <span class="text-xs px-2 py-1 bg-stone rounded text-gray-500">Kafka</span>
+                            <span class="text-xs px-2 py-1 bg-stone rounded text-gray-500">Redis</span>
+                            <span class="text-xs px-2 py-1 bg-stone rounded text-gray-500">Airflow</span>
+                            <span class="text-xs px-2 py-1 bg-stone rounded text-gray-500">Spark</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">Observability</h3>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="text-xs px-2 py-1 bg-stone rounded text-gray-500">Datadog</span>
+                            <span class="text-xs px-2 py-1 bg-stone rounded text-gray-500">Prometheus</span>
+                            <span class="text-xs px-2 py-1 bg-stone rounded text-gray-500">Grafana</span>
+                            <span class="text-xs px-2 py-1 bg-stone rounded text-gray-500">OpenTelemetry</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">Frontend</h3>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="text-xs px-2 py-1 bg-stone rounded text-gray-500">React</span>
+                            <span class="text-xs px-2 py-1 bg-stone rounded text-gray-500">Next.js</span>
+                            <span class="text-xs px-2 py-1 bg-stone rounded text-gray-500">D3.js</span>
+                            <span class="text-xs px-2 py-1 bg-stone rounded text-gray-500">GraphQL</span>
+                            <span class="text-xs px-2 py-1 bg-stone rounded text-gray-500">Tailwind</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
     </main>
 
-    <footer class="border-t border-gray-100 bg-white">
-        <div class="max-w-3xl mx-auto px-6 py-8 text-center text-xs text-gray-300">
-            &copy; 2026 Ryan Mitchell
+    <footer class="border-t border-gray-200 bg-white">
+        <div class="max-w-5xl mx-auto px-6 py-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div>
+                <p class="text-sm text-gray-700">
+                    Open to senior backend and infrastructure roles.
+                </p>
+                <p class="text-sm text-gray-400 mt-0.5">
+                    Based in San Francisco. Available in two weeks. Remote or hybrid works.
+                </p>
+            </div>
+            <a href="mailto:ryan@ryanmitchell.me" class="inline-flex items-center gap-2 px-5 py-2.5 bg-green text-white text-sm font-medium rounded-lg hover:bg-green-light transition-colors">
+                Get in touch
+            </a>
         </div>
     </footer>
 
