@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ryan Mitchell — Senior Software Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+                    colors: { accent: '#386641' }
+                }
+            }
+        }
+    </script>
+    <style>
+        * { font-family: 'Inter', system-ui, sans-serif; }
+    </style>
+</head>
+<body class="bg-[#FAFAF8] text-gray-800 antialiased">
+
+    <!-- Header -->
+    <header class="bg-white">
+        <div class="max-w-3xl mx-auto px-6 py-14 sm:py-18">
+            <div class="flex flex-col sm:flex-row items-center sm:items-start gap-6">
+                <img src="headshot.png" alt="Ryan Mitchell" class="w-28 h-28 sm:w-[120px] sm:h-[120px] rounded-full object-cover border-[3px] border-[#386641]/10 flex-shrink-0">
+                <div class="text-center sm:text-left">
+                    <h1 class="text-3xl sm:text-4xl font-bold text-gray-900">Ryan Mitchell</h1>
+                    <p class="mt-2 text-lg text-accent font-medium">Senior Software Engineer</p>
+                    <p class="mt-1 text-sm text-gray-400">San Francisco, CA</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-6">
+
+        <!-- About -->
+        <section class="py-12 sm:py-14">
+            <h2 class="text-xs font-bold uppercase tracking-widest text-accent/70 mb-4">About</h2>
+            <p class="text-gray-600 leading-relaxed text-[15px]">
+                I build backend systems and data infrastructure at startups. Over the past 5 years I've worked on threat detection pipelines, ML serving infrastructure, and API analytics tooling -- always focused on making systems fast, reliable, and cost-efficient. I'm most comfortable in the layer between application logic and infrastructure, and I care about writing systems that are as easy to operate as they are to build.
+            </p>
+        </section>
+
+        <div class="h-px bg-gray-200/50"></div>
+
+        <!-- Experience -->
+        <section class="py-12 sm:py-14">
+            <h2 class="text-xs font-bold uppercase tracking-widest text-accent/70 mb-8">Experience</h2>
+
+            <div class="mb-10">
+                <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-1">
+                    <h3 class="text-lg font-semibold text-gray-900">Senior Software Engineer</h3>
+                    <span class="text-sm text-gray-400 mt-0.5 sm:mt-0">Jan 2023 -- Present</span>
+                </div>
+                <p class="text-sm text-accent font-medium mb-3">Bastion Security &middot; Series C &middot; 180 employees</p>
+                <ul class="space-y-2 text-[15px] text-gray-600 leading-relaxed">
+                    <li>Redesigned the threat detection pipeline from batch-polling to Kafka streaming, reducing alert latency from 45 seconds to under 3 seconds.</li>
+                    <li>Built a multi-tenant API gateway in Go serving 2,400 req/sec at p99 of 68ms, with tenant-scoped rate limiting and automatic credential rotation.</li>
+                    <li>Led migration of 14 microservices from ECS to Kubernetes (EKS), cutting infrastructure costs by 31% and reducing deploy times from 18 minutes to 4 minutes.</li>
+                    <li>Designed and shipped a compliance reporting engine that generates SOC 2 audit trails across 6 AWS services, reducing customer audit prep from 2 weeks to 3 hours.</li>
+                    <li>Implemented distributed tracing with OpenTelemetry across 22 services, reducing MTTR from 47 minutes to 12 minutes.</li>
+                </ul>
+            </div>
+
+            <div class="mb-10">
+                <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-1">
+                    <h3 class="text-lg font-semibold text-gray-900">Backend Engineer</h3>
+                    <span class="text-sm text-gray-400 mt-0.5 sm:mt-0">Jun 2021 -- Dec 2022</span>
+                </div>
+                <p class="text-sm text-accent font-medium mb-3">Tensor Cloud &middot; Series B &middot; 110 employees</p>
+                <ul class="space-y-2 text-[15px] text-gray-600 leading-relaxed">
+                    <li>Built the model serving API in Python and Go, handling 1,800 inference req/sec with p99 latency of 92ms through connection pooling and response caching.</li>
+                    <li>Designed a data pipeline on Airflow and Kafka processing 3.2M training events daily, with automatic schema validation that caught 99.7% of malformed payloads.</li>
+                    <li>Migrated the billing system to an event-driven architecture, eliminating double-charge bugs that had caused $34K in refunds over 6 months.</li>
+                    <li>Created an internal cost attribution dashboard in React and D3.js that led to a 22% reduction in idle compute costs within the first quarter.</li>
+                </ul>
+            </div>
+
+            <div class="mb-10">
+                <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-1">
+                    <h3 class="text-lg font-semibold text-gray-900">Software Engineer</h3>
+                    <span class="text-sm text-gray-400 mt-0.5 sm:mt-0">Jul 2019 -- May 2021</span>
+                </div>
+                <p class="text-sm text-accent font-medium mb-3">Pinpoint Analytics &middot; Seed Stage &middot; 30 employees</p>
+                <ul class="space-y-2 text-[15px] text-gray-600 leading-relaxed">
+                    <li>Designed and built the data ingestion service in Python, processing 850K API call records daily with 99.95% uptime over 18 months.</li>
+                    <li>Built a time-series query engine on PostgreSQL with custom partitioning, reducing p95 dashboard load time from 4.2 seconds to 380ms.</li>
+                    <li>Developed the customer-facing analytics dashboard in React with D3.js, increasing daily active usage by 40% within 2 months of launch.</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="h-px bg-gray-200/50"></div>
+
+        <!-- Skills -->
+        <section class="py-12 sm:py-14">
+            <h2 class="text-xs font-bold uppercase tracking-widest text-accent/70 mb-6">Skills</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 text-[15px]">
+                <div>
+                    <h3 class="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-1.5">Languages</h3>
+                    <p class="text-gray-600">Python, TypeScript, Go, SQL</p>
+                </div>
+                <div>
+                    <h3 class="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-1.5">Infrastructure</h3>
+                    <p class="text-gray-600">AWS, Kubernetes, Docker, Terraform, Helm</p>
+                </div>
+                <div>
+                    <h3 class="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-1.5">Data & Streaming</h3>
+                    <p class="text-gray-600">Kafka, Airflow, PostgreSQL, Redis, Spark</p>
+                </div>
+                <div>
+                    <h3 class="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-1.5">Observability</h3>
+                    <p class="text-gray-600">Datadog, Prometheus, Grafana, OpenTelemetry</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="h-px bg-gray-200/50"></div>
+
+        <!-- Education -->
+        <section class="py-12 sm:py-14">
+            <h2 class="text-xs font-bold uppercase tracking-widest text-accent/70 mb-4">Education</h2>
+            <div>
+                <h3 class="font-semibold text-gray-900">University of Michigan</h3>
+                <p class="text-sm text-gray-500 mt-0.5">B.S. Computer Science &middot; 2019</p>
+            </div>
+        </section>
+
+        <div class="h-px bg-gray-200/50"></div>
+
+        <!-- Contact -->
+        <section class="py-12 sm:py-14">
+            <h2 class="text-xs font-bold uppercase tracking-widest text-accent/70 mb-4">Contact</h2>
+            <div class="space-y-2 text-[15px]">
+                <p class="text-gray-600"><span class="text-gray-400 inline-block w-16">Email</span> <a href="mailto:ryan@ryanmitchell.me" class="text-accent hover:underline">ryan@ryanmitchell.me</a></p>
+                <p class="text-gray-600"><span class="text-gray-400 inline-block w-16">Based in</span> San Francisco, CA</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="border-t border-gray-100 bg-white">
+        <div class="max-w-3xl mx-auto px-6 py-8 text-center text-xs text-gray-300">
+            &copy; 2026 Ryan Mitchell
+        </div>
+    </footer>
+
+</body>
+</html>
